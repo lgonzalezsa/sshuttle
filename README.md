@@ -1,5 +1,13 @@
+HACK FOR MAC OS X LION (10.7)
+=============================
+This branch is a temporary workaround for Mac OS X Lion.
 
-WARNING:
+Run the following command on your Mac OS X Lion to edit the boot-time settings of the kernel. This will set net.inet.ip.scopedroute to be 0.
+
+	sudo defaults write "/Library/Preferences/SystemConfiguration/com.apple.Boot" "Kernel Flags" "" # net.inet.ip.scopedroute=0 `defaults read "/Library/Preferences/SystemConfiguration/com.apple.Boot" "Kernel Flags"`"
+
+WARNING FOR MAC OS X SNOW LEOPARD (10.6)
+========================================
 On MacOS 10.6 (at least up to 10.6.6), your network will
 stop responding about 10 minutes after the first time you
 start sshuttle, because of a MacOS kernel bug relating to

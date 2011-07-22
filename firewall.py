@@ -233,7 +233,7 @@ def do_ipfw(port, dnsport, subnets):
                 "interface (change wireless networks or unplug/plug the\n"
                 "ethernet port) NOW, then restart sshuttle.  The fix is\n"
                 "permanent; you only have to do this once.\n\n")
-            sys.exit(1)
+            # sys.exit(1)
 
         ipfw('add', sport, 'check-state', 'ip',
              'from', 'any', 'to', 'any')
