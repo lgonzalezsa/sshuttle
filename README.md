@@ -4,7 +4,8 @@ This branch is a temporary workaround for Mac OS X Lion.
 
 Run the following command on your Mac OS X Lion to edit the boot-time settings of the kernel. This will set net.inet.ip.scopedroute to be 0.
 
-	sudo defaults write "/Library/Preferences/SystemConfiguration/com.apple.Boot" "Kernel Flags" "" # net.inet.ip.scopedroute=0 `defaults read "/Library/Preferences/SystemConfiguration/com.apple.Boot" "Kernel Flags"`"
+	sudo rm /Library/Preferences/SystemConfiguration/com.apple.Boot.plist.lockfile
+	sudo echo '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0"><dict><key>Kernel Flags</key><string>net.inet.ip.scopedroute=0</string></dict></plist>' > /Library/Preferences/SystemConfiguration/com.apple.Boot.plist	
 
 WARNING FOR MAC OS X SNOW LEOPARD (10.6)
 ========================================
